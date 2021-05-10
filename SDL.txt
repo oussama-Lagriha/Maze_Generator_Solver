@@ -1,0 +1,21 @@
+SDL_Init : charge la SDL en mémoire (des malloc y sont faits) ;
+SDL_Quit : libère la SDL de la mémoire (des free y sont faits).
+
+options pour la SDL_Init_VIDEO
+SDL_HWSURFACE : les données seront chargées dans la mémoire vidéo, c'est-à-dire dans la mémoire de votre
+carte 3D. Avantage : cette mémoire est plus rapide. Défaut : il y a en général moins d'espace dans cette mémoire
+que dans l'autre (SDL_SWSURFACE).
+SDL_SWSURFACE : les données seront chargées dans la mémoire système (c'est-à-dire la RAM, a priori).
+Avantage : il y a beaucoup d'espace dans cette mémoire. Défaut : c'est moins rapide et moins optimisé.
+SDL_RESIZABLE : la fenêtre sera redimensionnable. Par défaut elle ne l'est pas.
+SDL_NOFRAME : la fenêtre n'aura pas de barre de titre ni de bordure.
+SDL_FULLSCREEN : mode plein écran. Dans ce mode, aucune fenêtre n'est ouverte. Votre programme prendra
+toute la place à l'écran, en changeant automatiquement la résolution de celui-ci au besoin.
+SDL_DOUBLEBUF : mode double buffering . C'est une technique très utilisée dans les jeux 2D, et qui permet de
+faire en sorte que les déplacements des objets à l'écran soient fluides, sinon ça scintille et c'est assez laid. Je vous
+expliquerai les détails de cette technique très intéressante plus loin.
+
+WHITE = SDL_SetRenderDrawColor(renderer, 255, 255, 255, SDL_ALPHA_OPAQUE);
+RED = SDL_SetRenderDrawColor(renderer, 255, 0, 0, SDL_ALPHA_OPAQUE);
+GREEN = SDL_SetRenderDrawColor(renderer, 0, 255, 0, SDL_ALPHA_OPAQUE);
+BLUE = SDL_SetRenderDrawColor(renderer, 0, 0, 255, SDL_ALPHA_OPAQUE);
